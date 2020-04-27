@@ -130,7 +130,7 @@ create table coming_order_tables (
 	line_number smallint unsigned not null,  -- номер строки в документе
 	good_id bigint unsigned not null, 
 	expiration_date date  not null,  -- срок годности, не может быть пустым
-	cell_id bigint unsigned not null, -- ячейка, куда размещен товар
+	cell_id bigint unsigned default null, -- ячейка, куда размещен товар
 	`count` decimal(5,3) unsigned not null, -- количество в базовых единицах измерения (заданых в таблице goods)
 	summ decimal(10,2) unsigned default 0, -- сумма (справочно). учет ведется только количественный
 	
@@ -166,7 +166,7 @@ create table outgoing_order_tables (
 	line_number smallint unsigned not null,
 	good_id bigint unsigned not null,
 	expiration_date date  not null,
-	cell_id bigint unsigned not null,
+	cell_id bigint unsigned default null,
 	`count` decimal(5,3) unsigned not null, 
 	summ decimal(10,2) unsigned default 0,
 	

@@ -1,5 +1,5 @@
 -- 1. Топология склада (секции и ячейки)
-create view store_structure as
+create or replace view store_structure as
 select 
 	sections.name as `section`,
 	cells.code,
@@ -15,7 +15,7 @@ select * from store_structure;
 
 
 -- 2. Количество пустых ячеек по секциям
-create view empty_cells_count as
+create or replace view empty_cells_count as
 select 
 	sections.name as `section`,
 	count(*) as `count`
